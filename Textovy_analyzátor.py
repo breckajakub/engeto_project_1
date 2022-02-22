@@ -31,19 +31,19 @@ garpike and stingray are also present.''']
 ODDELOVAC = "-" * 40
 
 print(f"""{ODDELOVAC}
-{"Vitejte v aplikaci. Prosím přihlaste se:".center(62)}
+{"Vitejte v aplikaci. Prihlaste se prosim:".center(62)}
 {ODDELOVAC}""")
 
 database_uzivatelu = {"bob": "123", "ann": "pass123",
                       "mike": "password123", "liz": "pass123"}
-jmeno = input("Zadej své uživatelské jméno: ")
-heslo = input("Zadej své heslo: ")
+jmeno = input("Zadej uzivatelske jmeno: ")
+heslo = input("Zadejte heslo: ")
 password = database_uzivatelu.get(jmeno)
 
 if jmeno in database_uzivatelu and heslo in password:
     print(ODDELOVAC)
-    print("Máme 3 texty k analýze.")
-    vyber = int(input("Zadej číslo od 1 do 3 k výběru: "))
+    print("Jsou 3 texty k analyze.")
+    vyber = int(input("Zadej cislo od 1 do 3 k vyberu: "))
     print(ODDELOVAC)
 
     index = vyber - 1
@@ -52,7 +52,7 @@ if jmeno in database_uzivatelu and heslo in password:
     prvni_pismeno = []
     mala_pismena = []
     cisla = []
-    print("Délka analyzovaného textu je:", len(rozdeleni), "slov.")
+    print("Delka vybraneho textu je:", len(rozdeleni), "slov.")
 
     for i in rozdeleni:
         if i.istitle():
@@ -64,12 +64,12 @@ if jmeno in database_uzivatelu and heslo in password:
         elif i.isnumeric():
             cisla.append(i)
     print("Text obsahuje", len(prvni_pismeno),
-          "slov(a) s prvním velkým písmenem.")
+          "slov(a) s prvnim velkym pismenem.")
     print("Text obsahuje", len(velka_pismena),
-          "slov(a) napsaných velkými písmeny.")
+          "slov(a) napsanych velkymi pismeny.")
     print("Text obsahuje", len(mala_pismena),
-          "slov(a) napsaných malými pismeny.")
-    print("Text obsahuje", len(cisla), "číslo(a).")
+          "slov(a) napsanych malymi pismeny.")
+    print("Text obsahuje", len(cisla), "cislo(a).")
     print(ODDELOVAC)
 
     vyskyt_cisel = []
@@ -87,9 +87,9 @@ if jmeno in database_uzivatelu and heslo in password:
     for i in rozdeleni:
         if i.isnumeric():
             sectene_cislo = float(sectene_cislo) + float(i)
-    print("Pokud sečteme všechna čísla v textu tak získáme číslo:",
+    print("Pokud secteme vsechna cisla v textu tak ziskáme cislo:",
           sectene_cislo)
     print(ODDELOVAC)
 
 else:
-    print("Přístup zakázán!")
+    print("Pristup zakazan!")
